@@ -1,10 +1,10 @@
-# 🌊 Aqua IA Predict - Système de Surveillance de Qualité d'Eau
+#  Aqua IA Predict - Système de Surveillance de Qualité d'Eau
 
 > **Défi 2 - IA Night** : Prédiction en temps réel de la dégradation de la qualité de l'eau potable via Machine Learning et capteurs multisensoriels
 
 ---
 
-## 📋 Vue d'ensemble
+##  Vue d'ensemble
 
 **Aqua IA Predict** est une solution complète de surveillance et de prédiction de la qualité de l'eau potable. Elle combine :
 - **Données multisensorielles** : pH, turbidité, conductivité, chlore, température, pression, débit
@@ -14,7 +14,7 @@
 
 ---
 
-## 🏗️ Architecture Générale
+##  Architecture Générale
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -61,7 +61,7 @@
 
 ---
 
-## 📁 Structure du Projet
+##  Structure du Projet
 
 ```
 CHALLENGE2/
@@ -85,7 +85,7 @@ CHALLENGE2/
 
 ---
 
-## 🔧 Installation et Configuration
+##  Installation et Configuration
 
 ### Prérequis
 - Python 3.8+
@@ -133,17 +133,17 @@ http-server frontend -p 8080
 
 ---
 
-## 🤖 Modèles Machine Learning
+##  Modèles Machine Learning
 
 ### 1. **Classification de la Cause Probable**
 - **Modèle** : `RandomForestClassifier` (100 arbres)
 - **Entrée** : 7 capteurs (vecteur de features)
 - **Sortie** : 5 classes possibles
-  - ✅ **Normal** : Eau de bonne qualité (70% de probabilité)
-  - ⚠️ **Stagnation** : Faible débit, chlore bas (5%)
-  - 🔴 **Corrosion** : pH bas, conductivité haute (10%)
-  - 🟠 **Contamination** : Turbidité élevée, chlore très bas (5%)
-  - 📉 **Pression Faible** : Débit anormal (10%)
+  -  **Normal** : Eau de bonne qualité (70% de probabilité)
+  -  **Stagnation** : Faible débit, chlore bas (5%)
+  -  **Corrosion** : pH bas, conductivité haute (10%)
+  -  **Contamination** : Turbidité élevée, chlore très bas (5%)
+  -  **Pression Faible** : Débit anormal (10%)
 
 ### 2. **Régression de l'Indice de Risque**
 - **Modèle** : `RandomForestRegressor` (100 arbres)
@@ -154,7 +154,7 @@ http-server frontend -p 8080
   - **40-75%** → 🟠 Alerte Jaune (Vigilance requise)
   - **75-100%** → 🔴 Alerte Rouge (Critique)
 
-### 📊 Données d'Entraînement
+###  Données d'Entraînement
 - **Taille** : 5000 échantillons
 - **Distribution** : 60% Normal, 40% Anomalies (10% chaque type)
 - **Features** : 7 paramètres physico-chimiques
@@ -163,7 +163,7 @@ http-server frontend -p 8080
 
 ---
 
-## 🌐 API REST - Endpoints
+##  API REST - Endpoints
 
 ### `GET /simulate`
 Retourne des données simulées de capteurs basées sur des conditions aléatoires.
@@ -224,9 +224,9 @@ Else → 🟢 Vert
 
 ---
 
-## 💻 Frontend - Dashboard Web
+##  Frontend - Dashboard Web
 
-### 🎨 Design
+###  Design
 - **Thème** : Dark Mode (Glassmorphism)
 - **Framework** : Vanilla HTML/CSS/JS (zéro dépendance externe lourde)
 - **Librairies** :
@@ -234,7 +234,7 @@ Else → 🟢 Vert
   - **Google Fonts (Inter)** : Typographie moderne
 - **Responsivité** : Grid CSS (desktop/mobile)
 
-### 🖥️ Composants Principaux
+###  Composants Principaux
 
 #### 1. **En-tête (Header)**
 ```
@@ -291,7 +291,7 @@ Else → 🟢 Vert
 
 ---
 
-## 📡 Flux de Données Temps Réel
+##  Flux de Données Temps Réel
 
 ### Cycle d'Actualisation (1500ms)
 
@@ -327,7 +327,7 @@ Else → 🟢 Vert
 
 ---
 
-## 📈 Performances et Métriques
+##  Performances et Métriques
 
 ### Entraînement des Modèles
 
@@ -351,14 +351,14 @@ R²-Score: > 0.98
 
 ---
 
-## 🎯 Cas d'Usage et Scénarios
+##  Cas d'Usage et Scénarios
 
 ### 1. **Monitoring Quotidien (Normal)**
 ```
 Eau de bonne qualité
 ├─ Tous paramètres dans les normes
 ├─ Indice de risque < 25%
-└─ Alerte Verte ✅
+└─ Alerte Verte 
 ```
 
 ### 2. **Détection de Stagnation**
@@ -366,7 +366,7 @@ Eau de bonne qualité
 Chlore insuffisant + Débit faible
 ├─ Accumulation de bactéries possible
 ├─ Indice de risque 40-60%
-└─ Alerte Jaune ⚠️
+└─ Alerte Jaune 
 ```
 
 ### 3. **Alarme de Corrosion**
@@ -387,7 +387,7 @@ Turbidité extrême + Chlore absent
 
 ---
 
-## 🚀 Déploiement
+##  Déploiement
 
 ### Production (Docker)
 
@@ -415,12 +415,12 @@ vercel deploy frontend/
 
 ---
 
-## 🔐 Sécurité et Conformité
+##  Sécurité et Conformité
 
-- ✅ **CORS** : Configurable par environnement
-- ✅ **Validation** : Pydantic models
-- ✅ **Type hints** : Python typing
-- ⚠️ **À implémenter** :
+-  **CORS** : Configurable par environnement
+-  **Validation** : Pydantic models
+-  **Type hints** : Python typing
+-  **À implémenter** :
   - Authentification JWT
   - Rate limiting
   - Logging sécurisé
@@ -428,7 +428,7 @@ vercel deploy frontend/
 
 ---
 
-## 🐛 Dépannage
+##  Dépannage
 
 ### API non accessible
 ```bash
@@ -455,7 +455,7 @@ Vérifier que API_URL dans main.js est correcte
 
 ---
 
-## 📚 Documentation Supplémentaire
+##  Documentation Supplémentaire
 
 - **Script Vidéo** : Voir `documentation.md`
 - **Code Backend** : `backend/app.py` (77 lignes, bien commenté)
@@ -464,7 +464,7 @@ Vérifier que API_URL dans main.js est correcte
 
 ---
 
-## 🎓 Technologies Utilisées
+##  Technologies Utilisées
 
 | Composant | Technologie | Version |
 |-----------|-------------|---------|
@@ -478,23 +478,23 @@ Vérifier que API_URL dans main.js est correcte
 
 ---
 
-## 👥 Équipe et Contribution
+##  Équipe et Contribution
 
 Développé pour le **Défi 2 - IA Night** (Surveillance Qualité Eau).
 
 ### Points Clés Implémentés
-- ✅ Génération de 5000 données réalistes
-- ✅ Modèles ML (Classification + Régression)
-- ✅ API REST temps réel (FastAPI)
-- ✅ Dashboard interactif (Glassmorphism)
-- ✅ Graphiques historiques (Chart.js)
-- ✅ Système d'alertes intégré
-- ✅ Responsive design
-- ✅ Zero framework CSS (Custom)
+-  Génération de 5000 données réalistes
+-  Modèles ML (Classification + Régression)
+-  API REST temps réel (FastAPI)
+-  Dashboard interactif (Glassmorphism)
+-  Graphiques historiques (Chart.js)
+-  Système d'alertes intégré
+-  Responsive design
+-  Zero framework CSS (Custom)
 
 ---
 
-## 📞 Support
+##  Support
 
 Pour toute question ou amélioration :
 1. Vérifier la section **Dépannage**
@@ -504,4 +504,4 @@ Pour toute question ou amélioration :
 ---
 
 **Dernière mise à jour** : 23 Mai 2026  
-**Statut** : ✅ Production Ready
+**Statut** :  Production Ready
