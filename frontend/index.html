@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveillance Qualite Eau - IA Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header glass-panel">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <h1>Aqua IA Predict</h1>
+            </div>
+            <div class="status-badge" id="alert-badge">
+                <span class="dot"></span>
+                <span id="alert-text">Connexion...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-grid">
+            
+            <!-- Risk Section -->
+            <section class="risk-panel glass-panel">
+                <h2>Indice de Risque</h2>
+                <div class="risk-meter">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path id="risk-circle" class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <div class="risk-value">
+                        <span id="risk-number">0</span><span class="risk-unit">%</span>
+                    </div>
+                </div>
+                <div class="cause-box">
+                    <h3>Cause Probable:</h3>
+                    <p id="probable-cause" class="cause-text">-</p>
+                </div>
+            </section>
+
+            <!-- Sensors Live Data -->
+            <section class="sensors-panel glass-panel">
+                <h2>Donnees Multisensorielles en Temps Reel</h2>
+                <div class="sensors-grid">
+                    <div class="sensor-card"><span class="label">pH</span><span class="value" id="val-ph">0.0</span></div>
+                    <div class="sensor-card"><span class="label">Turbidite (NTU)</span><span class="value" id="val-turb">0.0</span></div>
+                    <div class="sensor-card"><span class="label">Conductivite</span><span class="value" id="val-cond">0</span></div>
+                    <div class="sensor-card"><span class="label">Chlore (mg/L)</span><span class="value" id="val-chlor">0.0</span></div>
+                    <div class="sensor-card"><span class="label">Temp. (C)</span><span class="value" id="val-temp">0.0</span></div>
+                    <div class="sensor-card"><span class="label">Pression (bar)</span><span class="value" id="val-press">0.0</span></div>
+                    <div class="sensor-card"><span class="label">Debit (L/min)</span><span class="value" id="val-flow">0</span></div>
+                </div>
+            </section>
+
+            <!-- Chart Section -->
+            <section class="charts-panel glass-panel">
+                <h2>Evolution Historique</h2>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
